@@ -1,5 +1,6 @@
 package com.emse.spring.faircorp.model;
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "RWINDOW")
@@ -27,10 +28,13 @@ public class Window {
         this.windowStatus = status;
         this.name = name;
         this.room=room;
+        Set<Window> windows = room.getWindows();
+        windows.add(this);
+        room.setWindows(windows);
     }
 
     public Long getId() {
-        return this.id;
+        return id;
     }
 
     public void setId(Long id) {
@@ -40,8 +44,6 @@ public class Window {
     public String getName() {
         return name;
     }
-
-    public Room getRoom() {return room;}
 
     public void setName(String name) {
         this.name = name;
@@ -53,5 +55,13 @@ public class Window {
 
     public void setWindowStatus(WindowStatus windowStatus) {
         this.windowStatus = windowStatus;
+    }
+
+    public Room getRoom() {
+        return room;
+    }
+
+    public void setRoom(Room room) {
+        this.room = room;
     }
 }

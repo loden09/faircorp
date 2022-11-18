@@ -39,19 +39,11 @@ public class Room {
     }
 
     public Long getId() {
-        return this.id;
+        return id;
     }
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public int getFloor() {
@@ -60,6 +52,14 @@ public class Room {
 
     public void setFloor(int floor) {
         this.floor = floor;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Double getCurrentTemperature() {
@@ -74,8 +74,8 @@ public class Room {
         return targetTemperature;
     }
 
-    public void setTargetTemperature(Double currentTemperature) {
-        this.targetTemperature = currentTemperature;
+    public void setTargetTemperature(Double targetTemperature) {
+        this.targetTemperature = targetTemperature;
     }
 
     public Set<Heater> getHeaters() {

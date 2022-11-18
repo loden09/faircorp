@@ -64,7 +64,7 @@ public class RoomController {
         heaterDao.deleteAll();
     }
 
-    @PutMapping(path = "/{id}/switchWindows")
+    @PutMapping(path = "/{room_id}/switchWindows")
     public ArrayList<WindowDto> switchWindows(@PathVariable Long room_id) {
         Room room = roomDao.findById(room_id).orElseThrow(IllegalArgumentException::new);
         List<Window> windows = windowDao.findWindowbyRoomName(room.getName());
@@ -76,9 +76,9 @@ public class RoomController {
         return retur;
     }
 
-    @PutMapping(path = "/{id}/switchHeaters")
-    public ArrayList<HeaterDto> switchHeaters(@PathVariable Long id) {
-        Room room = roomDao.findById(id).orElseThrow(IllegalArgumentException::new);
+    @PutMapping(path = "/{room_id}/switchHeaters")
+    public ArrayList<HeaterDto> switchHeaters(@PathVariable Long room_id) {
+        Room room = roomDao.findById(room_id).orElseThrow(IllegalArgumentException::new);
         List<Heater> heaters = heaterDao.findHeaterbyRoomName(room.getName());
         ArrayList<HeaterDto> retur = new ArrayList<HeaterDto>() ;
         for (Heater heater : heaters){
