@@ -10,7 +10,18 @@ You just need to click on this link to access my application:
 
 http://leo-hatstatt.cleverapps.io/swagger-ui/
 
-There is a normal user and an admin user, you can access to an admin session with the login admin and the password password, and you can acces to an user session with the login user and the password myPassword. Some features are locked if you are logged in as user.
+There is a normal user and an admin user, some features are locked if you are logged in as user. To acces to an admin session:
+
+Login : admin 
+
+Password : password
+
+To acces to an user session :
+
+Login : user
+
+Password : myPassword
+
 
 You can create rooms, windows and heaters, find them if you have their Id or name, or find the heaters and windows in a room. You can also change the status of windows (opened or closed) and heaters (on or off).
 
